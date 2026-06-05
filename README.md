@@ -14,7 +14,7 @@ A basic calculator built using HTML, CSS and JavaScript.
 - Multiplication
 - Division
 
-Live link : https://sanjaydotenv.github.io/ALittleBitIsLeft./LBT1/
+Live link : https://sanjaydotenv.github.io/ALittleBitIsLeft/LBT1/
 
 ## Author
 
