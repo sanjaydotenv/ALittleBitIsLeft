@@ -18,4 +18,4 @@ Live link : https://sanjaydotenv.github.io/ALittleBitIsLeft./LBT1/
 
 ## Author
 
-Mayur Bairagi
+Sanjay Bairagi
