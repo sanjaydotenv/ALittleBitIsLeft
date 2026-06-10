@@ -28,7 +28,7 @@ A basic To-Do app Manage your daily tasks
 - Show Description
 - Start with Processing
 
-Live link : 
+Live link : https://sanjaydotenv.github.io/ALittleBitIsLeft/LBT2/
 
 
 ## Author
