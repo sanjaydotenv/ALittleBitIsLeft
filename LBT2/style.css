@@ -1,0 +1,179 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.createTodo {
+  height: 100%;
+  width: 40%;
+  background-color: rgba(72, 14, 121, 1);
+}
+
+.todoname {
+  font-size: 3rem;
+  color: white;
+}
+
+.viewTodo {
+  height: 100%;
+  width: 60%;
+  background-color: rgba(47, 9, 79, 1);
+  overflow-y: auto;
+}
+
+.content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+}
+
+form input {
+  padding: 0.9rem 1rem;
+  background-color: rgba(72, 14, 121);
+  border: 3px solid rgb(10, 179, 205);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+form textarea {
+  padding: 0.4rem 1rem;
+  height: 10rem;
+  resize: none;
+  background-color: rgba(72, 14, 121);
+  border: 3px solid rgb(10, 179, 205);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.createbtn {
+  padding: 10px;
+  background-color: rgb(164, 4, 4);
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 1.5rem;
+  width: 80%;
+}
+
+.alltasks {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.taskdiv:hover {
+  transition: all 0.3s ease;
+  transform: translatey(-10px);
+}
+
+.taskdiv div {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(31, 6, 53, 1);
+  padding: 10px 20px;
+  box-shadow: 2px 2px 1px rgb(212, 118, 118);
+}
+
+.taskdiv h1 {
+  color: white;
+}
+
+.taskdiv button {
+  padding: 0.5rem 3rem;
+  border-radius: 1.5rem;
+  background-color: rgb(206, 206, 19);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.buttons {
+   padding: 0.5rem 3rem;
+  border-radius: 1.5rem;
+  background-color: rgb(206, 206, 19);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.alltasks .taskDescription {
+  display: none;
+  color: white;
+}
+
+.taskDescription p {
+  word-break: break-word;
+}
+
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .createTodo,
+  .viewTodo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .todoname {
+    font-size: 2rem;
+  }
+
+  .createbtn {
+    width: 100%;
+  }
+
+  .taskdiv div {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .taskdiv button,
+  .buttons {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .taskdiv h1 {
+    font-size: 1.2rem;
+  }
+
+  .alltasks {
+    padding: 15px;
+    gap: 20px;
+  }
+}
