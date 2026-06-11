@@ -11,8 +11,17 @@ function RenderTask(task) {
   let h1 = document.createElement("h1");
   h1.textContent = task.title;
   let button = document.createElement("button");
-  button.textContent = "Processing";
+  if (task.complete) {
+    button.textContent = "Completed";
+    button.style.backgroundColor = "green";
+    button.style.color = "white";
+  } else {
+    button.textContent = "Processing";
+  }
   button.classList.add("buttons");
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.classList.add("deleteBtn");
   let taskDescription = document.createElement("div");
   taskDescription.classList.add("taskDescription");
   let p = document.createElement("p");
@@ -20,6 +29,9 @@ function RenderTask(task) {
 
   div.appendChild(h1);
   div.appendChild(button);
+  div.appendChild(h1);
+  div.appendChild(button);
+  div.appendChild(deleteBtn);
   taskDescription.appendChild(p);
   taskdiv.appendChild(div);
   taskdiv.appendChild(taskDescription);
@@ -43,6 +55,7 @@ form.addEventListener("submit", function (e) {
   let task = {
     title: titleInp.value,
     description: areaInp.value,
+    complete: false,
   };
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -56,10 +69,40 @@ form.addEventListener("submit", function (e) {
 });
 
 allTasks.addEventListener("click", function (e) {
+  if (e.target.classList.contains("deleteBtn")) {
+    let taskDiv = e.target.closest(".taskdiv");
+
+    let title = taskDiv.querySelector("h1").textContent;
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    tasks = tasks.filter((task) => task.title !== title);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    taskDiv.remove();
+
+    return;
+  }
   if (e.target.classList.contains("buttons")) {
-    e.target.style.backgroundColor = "green";
+    let taskDiv = e.target.closest(".taskdiv");
+
+    let title = taskDiv.querySelector("h1").textContent;
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    tasks.forEach((task) => {
+      if (task.title === title) {
+        task.complete = true;
+      }
+    });
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
     e.target.textContent = "Completed";
+    e.target.style.backgroundColor = "green";
     e.target.style.color = "white";
+
     return;
   }
 
@@ -68,7 +111,6 @@ allTasks.addEventListener("click", function (e) {
   if (!task) return;
 
   let description = task.querySelector(".taskDescription");
-  console.log(description);
 
   if (description.style.display === "flex") {
     description.style.display = "none";

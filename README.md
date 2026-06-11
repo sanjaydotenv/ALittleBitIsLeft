@@ -27,6 +27,7 @@ A basic To-Do app Manage your daily tasks
 - Mark as Complete
 - Show Description
 - Start with Processing
+- Delete Task
 
 Live link : https://sanjaydotenv.github.io/ALittleBitIsLeft/LBT2/
 
