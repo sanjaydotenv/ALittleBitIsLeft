@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(26, 25, 25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+}
+
+h2 {
+  color: white;
+  font-family: sans-serif;
+}
+
+main {
+  height: 500px;
+  width: 500px;
+  border: 5px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.box {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+button {
+  padding: 12px 52px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+button:active {
+  scale: 0.9;
+}
+
+/* Difficulty Panel */
+
+.difficulty {
+  width: 220px;
+  min-height: 320px;
+  border: 4px solid white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.difficulty h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.easy {
+  background-color: green;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.hard {
+  background-color: red;
+}
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlay h1 {
+  color: white;
+  font-size: 80px;
+  font-family: sans-serif;
+}
+
+.overlay h4 {
+  color: white;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.overlay button {
+  margin-top: 20px;
+  background-color: black;
+  box-shadow: 1px 1px 1px white;
+  padding: 10px 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .difficulty {
+    width: 100%;
+    max-width: 500px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .top {
+    width: 90vw;
+  }
+
+  .box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .overlay h1 {
+    font-size: 45px;
+  }
+
+  .overlay h4 {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 30px;
+  }
+}
