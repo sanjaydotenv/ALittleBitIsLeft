@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#181818;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.todo-container{
+    width:700px;
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#22c55e;
+    transition:0.3s;
+}
+
+.task-list{
+    margin-top:25px;
+}
+
+.task{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border:2px solid #d8d8d8;
+    border-radius:12px;
+    padding:12px 15px;
+    margin-bottom:15px;
+}
+
+.task:hover{
+    border-color:#6d5dfc;
+}
+
+.task input[type="checkbox"]{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.task-input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-size:18px;
+    background:transparent;
+}
+
+.task-input::placeholder{
+    color:#999;
+}
